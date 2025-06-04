@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Defines character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+  <meta name="description" content="HTML Tags Reference">
+  <meta name="author" content="Abhilash Reddy">
+  <title>All HTML Tags – Reference</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    section { margin-bottom: 40px; }
+    h2 { border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+    code { background: #eee; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌐 All HTML Tags – Cheat Sheet</h1>
+    <p>This page includes almost all commonly used HTML tags with examples and comments.</p>
+    <nav>
+      <a href="#text">Text Tags</a> |
+      <a href="#structure">Page Structure</a> |
+      <a href="#forms">Forms</a> |
+      <a href="#media">Media</a> |
+      <a href="#tables">Tables</a> |
+      <a href="#lists">Lists</a> |
+      <a href="#semantic">Semantic</a> |
+      <a href="#meta">Meta</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="text">
+      <h2>📝 Text Formatting Tags</h2>
+      <p><strong>Bold text</strong></p>
+      <p><em>Italic text</em></p>
+      <p><u>Underlined text</u></p>
+      <p><mark>Highlighted text</mark></p>
+      <p><del>Deleted text</del></p>
+      <p><ins>Inserted text</ins></p>
+      <p><small>Small text</small></p>
+      <p>This is <sub>subscript</sub> and <sup>superscript</sup>.</p>
+      <blockquote>This is a blockquote</blockquote>
+      <abbr title="HyperText Markup Language">HTML</abbr> is awesome!
+      <br>
+      <code>&lt;div&gt;</code> is a block-level element.
+    </section>
+
+    <section id="structure">
+      <h2>🏗️ Structure Tags</h2>
+      <div>This is a <code>div</code> block.</div>
+      <span>This is an inline <code>span</code>.</span>
+      <hr>
+      <pre>
+        Line 1
+        Line 2
+        Line 3
+      </pre>
+    </section>
+
+    <section id="forms">
+      <h2>🧾 Forms and Inputs</h2>
+      <form action="#">
+        <label for="name">Name:</label>
+        <input type="text" id="name"><br><br>
+
+        <label>Email: <input type="email"></label><br><br>
+
+        <label>Password: <input type="password"></label><br><br>
+
+        <label>Age: <input type="number"></label><br><br>
+
+        <label>DOB: <input type="date"></label><br><br>
+
+        <input type="checkbox" checked> I agree<br>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female<br><br>
+
+        <select>
+          <option>India</option>
+          <option>USA</option>
+        </select><br><br>
+
+        <textarea rows="4" cols="30">Your message here...</textarea><br><br>
+
+        <button type="submit">Submit</button>
+        <input type="reset">
+      </form>
+    </section>
+
+    <section id="media">
+      <h2>🎥 Media Tags</h2>
+      <img src="image.png" alt="Sample Image">
+      <br><br>
+      <audio controls>
+        <source src="sample.mp3" type="audio/mp3">
+        Your browser does not support audio.
+      </audio>
+      <br><br>
+      <video width="320" height="240" controls>
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </section>
+
+    <section id="tables">
+      <h2>📊 Table Tags</h2>
+      <table border="1">
+        <caption>Sample Table</caption>
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>Abhilash</td><td>95</td>
+          </tr>
+          <tr>
+            <td>2</td><td>Ravi</td><td>90</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="3">End of table</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section id="lists">
+      <h2>📋 List Tags</h2>
+      <h3>Ordered List</h3>
+      <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+      </ol>
+
+      <h3>Unordered List</h3>
+      <ul>
+        <li>Node</li>
+        <li>React</li>
+        <li>MongoDB</li>
+      </ul>
+
+      <h3>Description List</h3>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Structure of the web page</dd>
+        <dt>CSS</dt>
+        <dd>Styling of the web page</dd>
+      </dl>
+    </section>
+
+    <section id="semantic">
+      <h2>🧱 Semantic Elements</h2>
+      <article>
+        <h3>Article Title</h3>
+        <p>This is an article.</p>
+      </article>
+
+      <aside>
+        <p>This is an aside (sidebar content).</p>
+      </aside>
+
+      <figure>
+        <img src="https://via.placeholder.com/100" alt="Placeholder">
+        <figcaption>Image description</figcaption>
+      </figure>
+
+      <section>
+        <p>This is a section tag inside section.</p>
+      </section>
+    </section>
+
+    <section id="meta">
+      <h2>⚙️ Meta & Script Tags</h2>
+      <p>These are in the <code>&lt;head&gt;</code>:</p>
+      <ul>
+        <li><code>&lt;meta charset="UTF-8"&gt;</code></li>
+        <li><code>&lt;title&gt;Page Title&lt;/title&gt;</code></li>
+        <li><code>&lt;link&gt;</code> – Link to external CSS</li>
+        <li><code>&lt;script&gt;</code> – Embed JS</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Abhilash Reddy | HTML Week 1 Reference</p>
+  </footer>
+
+</body>
+</html>
