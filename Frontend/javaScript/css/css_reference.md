@@ -146,6 +146,11 @@ visibility, opacity, cursor, box-shadow, text-shadow, object-fit, pointer-events
 @media (max-width: 768px) {
   body { font-size: 14px; }
 }
+
+@media (min-width: 480px) and (max-width: 768px) {
+  /* CSS rules for screens between 480px and 768px wide */
+}
+
 ```
 
 ---
