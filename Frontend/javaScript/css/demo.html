@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selector & Property Demo</title>
+  <style>
+    h1 {
+      color: darkblue;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+    #unique {
+      color: red;
+    }
+
+    .container p {
+      color: green;
+    }
+    .container > span {
+      font-weight: bold;
+    }
+    .container + div {
+      background-color: lightgray;
+    }
+
+    a:hover {
+      color: orange;
+    }
+    input:focus {
+      border: 2px solid blue;
+      outline: none;
+    }
+
+    p::first-letter {
+      font-size: 150%;
+      color: teal;
+    }
+
+    input[type="text"] {
+      border: 2px dashed purple;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: coral;
+      transition: transform 0.5s ease, background-color 0.5s;
+    }
+
+    .box:hover {
+      transform: scale(1.2) rotate(10deg);
+      background-color: tomato;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+      100% { transform: translateY(0); }
+    }
+    .animated-box {
+      width: 100px;
+      height: 100px;
+      background: lightblue;
+      animation: bounce 2s infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Demo Page</h1>
+  <p>This is a normal paragraph.</p>
+  <p class="highlight">This is a highlighted paragraph.</p>
+  <p id="unique">This has a unique ID.</p>
+
+  <div class="container">
+    <p>Descendant paragraph inside .container</p>
+    <span>Direct child span</span>
+  </div>
+  <div>Next sibling div (styled by + selector)</div>
+
+  <a href="#">Hover over this link</a>
+
+  <form>
+    <input type="text" placeholder="Focus me">
+  </form>
+
+  <p>This paragraph has a styled first letter.</p>
+
+  <div class="box">Hover Me</div>
+  <br><br>
+  <div class="animated-box"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+@keyframes animationName {
+  0%   { /* Initial styles */ }
+  50%  { /* Midway styles */ }
+  100% { /* Final styles */ }
+}
+
+
+selector {
+  animation-name: animationName;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+
+<style>
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  animation: bounce 1s infinite;
+}
+</style>
+
+<div class="box"></div>
+
+
+🔹 Common Animation Properties
+Property	Description
+animation-name	Name of the keyframes to use
+animation-duration	How long the animation takes (e.g., 2s, 500ms)
+animation-timing-function	Easing (e.g., ease, linear, ease-in, ease-out, cubic-bezier)
+animation-delay	Delay before animation starts
+animation-iteration-count	How many times it repeats (1, infinite)
+animation-direction	Direction (normal, reverse, alternate, alternate-reverse)
+animation-fill-mode	Apply styles before/after animation (none, forwards, backwards, both)
+animation-play-state	Running or paused
