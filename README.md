@@ -1,9 +1,9 @@
 # fullstack-dev-log
-Tracking my full stack web development journey at CipherSchools.
+Tracking my full stack web development journey.
 
-# 🌐 MERN Stack Development – CipherSchools Journey
+# 🌐 MERN Stack Development – Journey
 
-Welcome to my MERN Stack Development learning repository! This repository documents my hands-on journey through a comprehensive full-stack web development course offered by **CipherSchools**, focused on mastering the **MERN** stack.
+Welcome to my MERN Stack Development learning repository! This repository documents my hands-on journey through a comprehensive full-stack web development focused on mastering the **MERN** stack.
 
 ---
 
@@ -37,8 +37,6 @@ Throughout this course, I will be learning and building with:
 - ✅ Authentication and Authorization (JWT, Cookies)
 - ✅ Deploying full-stack applications (Render, Vercel, etc.)
 - ✅ Building real-world projects and mini apps
-
----
 
 
 
