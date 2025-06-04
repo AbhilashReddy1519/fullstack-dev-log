@@ -1,5 +1,4 @@
-# fullstack-dev-log
-Tracking my full stack web development journey.
+
 
 # 🌐 MERN Stack Development – Journey
 
