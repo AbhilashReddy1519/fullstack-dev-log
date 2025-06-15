@@ -27,9 +27,9 @@ function ToDo() {
                         ]);
                     }} className="ui secondary button" title="Add Task 😎😎">Add Task</button>
                     </div>
-                    <div className="ui cards" style={{marginTop: '2rem', background: '#f2f2f2', borderRadius: '10px', justifyContent: 'space-around'}}>
-                        {taskList.map((task) => (
-                            <Task title={task.title} description={task.description} date={task.createdDate}/>
+                    <div className="ui cards" style={{marginTop: '2rem', background: '#f2f2f2', borderRadius: '10px', justifyContent: 'space-evenly', boxShadow: '0 0 10px gray'}}>
+                        {taskList.map((task, index) => (
+                            <Task task={task} key={index}/>
                         ))}
                     </div>
                 </div>

@@ -1,20 +1,27 @@
 // import {useState} from 'react';
 // https://youtube.com/shorts/LxJ3n-XqnD4?si=mUHiUJDIUxX3Zk9u
 // vedio for props and props children
-function Task({title, description, date}) {
+// Objects are not valid as a React child (found: [object Date]). If you meant to render a collection of children, use an array instead.
+
+
+function Task({task}) {
+    const formattedDateTime = task.createdDate.toLocaleString('en-US', {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+    });
     return (
         <>
             <div className="card">
                 <div className="content">
                     <div className="delete">&times;</div>
                     <div className="header">
-                        {title}
+                        {task.title}
                     </div>
                     <div className="meta">
-                        {date}
+                        {formattedDateTime}
                     </div>
                     <div className="description">
-                        {description}
+                        {task.description}
                     </div>
                     </div>
                     <div className="extra content">
