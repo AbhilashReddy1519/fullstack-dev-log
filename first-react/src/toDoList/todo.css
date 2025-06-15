@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    text-align: center;
+
+}
+
+.todo {
+    padding: 5vh 10%;
+}
+
+.delete {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    font-size: 2rem;
+    text-align: center;
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center; */
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+}
