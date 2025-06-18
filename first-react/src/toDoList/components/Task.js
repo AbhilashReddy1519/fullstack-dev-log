@@ -4,8 +4,8 @@
 // Objects are not valid as a React child (found: [object Date]). If you meant to render a collection of children, use an array instead.
 
 
-function Task({task}) {
-    const formattedDateTime = task.createdDate.toLocaleString('en-US', {
+function Task({task: {title, description, createdDate}}) {
+    const formattedDateTime = createdDate.toLocaleString('en-US', {
         dateStyle: 'medium',
         timeStyle: 'short'
     });
@@ -15,13 +15,13 @@ function Task({task}) {
                 <div className="content">
                     <div className="delete">&times;</div>
                     <div className="header">
-                        {task.title}
+                        {title}
                     </div>
                     <div className="meta">
                         {formattedDateTime}
                     </div>
                     <div className="description">
-                        {task.description}
+                        {description}
                     </div>
                     </div>
                     <div className="extra content">

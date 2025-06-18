@@ -1,5 +1,6 @@
 // import { Component } from "react";
 import { useState } from "react";
+import AddTask from "./components/addTask";
 import './todo.css';
 import Task from './components/Task';
 
@@ -7,6 +8,16 @@ import Task from './components/Task';
 function ToDo() {
     // const [taskCount, setTaskCount] = useState(0);
     const [taskList, setTaskList] = useState([]);
+
+    let addNewTask = (task) => {
+        if(!task) return;
+        setTaskList([
+            ...taskList,{
+                ...task, createdDate: new Date()
+            }
+        ]);
+    }
+
     return (
         <>
             <div className="todo">
@@ -25,8 +36,9 @@ function ToDo() {
                                 createdDate: new Date()
                             }
                         ]);
-                    }} className="ui secondary button" title="Add Task 😎😎">Add Task</button>
+                    }} className="ui secondary button" title="Add Task 😎😎" >Add Task</button>
                     </div>
+                    <AddTask getTask={addNewTask}/>
                     <div className="ui cards" style={{marginTop: '2rem', background: '#f2f2f2', borderRadius: '10px', justifyContent: 'space-evenly', boxShadow: '0 0 10px gray'}}>
                         {taskList.map((task, index) => (
                             <Task task={task} key={index}/>
