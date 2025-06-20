@@ -6,13 +6,13 @@ import { useState } from "react";
 //     );
 // }
 
-
 const AddTask = ({getTask}) => {
     // use state for task handling
     const [task, setTask] = useState({
         title: "",
         description: ""
     });
+    
     // function(or)method to get values
     let handleInput = (e) => {
         setTask({

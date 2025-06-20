@@ -1,6 +1,8 @@
 // import logo from './logo.svg';
+// import { useState } from 'react';
 import ToDo from './toDoList/toDo';
 import './App.css';
+import {createBrowserRouter, RouterProvider } from 'react-router';
 
 // function App() {
 //   return (
@@ -29,8 +31,16 @@ import './App.css';
 // }
 // here both are functional components so we can use both syntax
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <ToDo />
+  },
+])
+
 const App = () => {
-  return <ToDo />
-}
+  // const [tasks,  setTasks] = useState([]);
+  return <RouterProvider router={router} />
+};
 
 export default App;

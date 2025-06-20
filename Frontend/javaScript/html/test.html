@@ -74,16 +74,18 @@
 
         <label>DOB: <input type="date"></label><br><br>
 
-        <input type="checkbox" checked> I agree<br>
-        <input type="radio" name="gender"> Male
-        <input type="radio" name="gender"> Female<br><br>
+        <label ><input  type="checkbox" checked> I agree<br></label>
+        <label><input type="radio" name="gender"> Male</label>
+        <label>
+          <input type="radio" name="gender" title="Select Female"> Female
+        </label><br><br>
 
-        <select>
+        <select title="countries">
           <option>India</option>
           <option>USA</option>
         </select><br><br>
 
-        <textarea rows="4" cols="30">Your message here...</textarea><br><br>
+        <label title="textarea"><textarea title="textarea" rows="4" cols="30">Your message here...</textarea><br><br></label>
 
         <button type="submit">Submit</button>
         <input type="reset">

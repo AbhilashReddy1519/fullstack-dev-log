@@ -31,15 +31,22 @@ function ToDo() {
                         setTaskList([
                             ...taskList,
                             {
-                                title: "Go to Gym",
-                                description: "Gym is good",
+                                title:"Task Preview",
+                                description: "This is normal preview of task",
                                 createdDate: new Date()
                             }
                         ]);
-                    }} className="ui secondary button" title="Add Task 😎😎" >Add Task</button>
+                    }} className="ui secondary button" title="This is normal button to preview task adding." >Add Task</button>
                     </div>
                     <AddTask getTask={addNewTask}/>
-                    <div className="ui cards" style={{marginTop: '2rem', background: '#f2f2f2', borderRadius: '10px', justifyContent: 'space-evenly', boxShadow: '0 0 10px gray'}}>
+                    <div className="ui cards"
+                        style={{
+                            marginTop: '2rem', 
+                            background: '#f2f2f2', 
+                            borderRadius: '10px', 
+                            justifyContent: 'space-evenly', 
+                            boxShadow: '0 0 10px gray'
+                        }}>
                         {taskList.map((task, index) => (
                             <Task task={task} key={index}/>
                         ))}
