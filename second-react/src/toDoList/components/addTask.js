@@ -46,12 +46,12 @@ const AddTask = () => {
                     <h3 className="ui heading center">Add New Task</h3>
                     <div className="ui form">
                         <div className="field">
-                            <label for="title">Title</label>
-                            <input type="text" placeholder="Task Title" name="title" onChange={handleInput} value={task.title}/>
+                            <label htmlFor="title">Title</label>
+                            <input type="text" id="title" placeholder="Task Title" name="title" onChange={handleInput} value={task.title}/>
                         </div>
                         <div className="field">
-                            <label for="description">Description</label>
-                            <textarea rows="4" placeholder="Description here..." name="description" onChange={handleInput} value={task.description}/>
+                            <label htmlFor="description">Description</label>
+                            <textarea rows="4" id='description' placeholder="Description here..." name="description" onChange={handleInput} value={task.description}/>
                         </div>
                         <button type="submit" className="ui primary button"> Submit </button>
                     </div>

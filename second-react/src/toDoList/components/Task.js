@@ -3,8 +3,13 @@
 // vedio for props and props children
 // Objects are not valid as a React child (found: [object Date]). If you meant to render a collection of children, use an array instead.
 
+import { useContext } from "react";
+import TaskContext from "../contexts/taskContext";
 
-function Task({task: {title, description, createdDate}}) {
+
+function Task({task: {title, description, createdDate, taskId, completed}}) {
+    const {deleteTask, completeTask} = useContext(TaskContext);
+
     const formattedDateTime = createdDate.toLocaleString('en-US', {
         dateStyle: 'medium',
         timeStyle: 'short'
@@ -13,21 +18,28 @@ function Task({task: {title, description, createdDate}}) {
         <>
             <div className="card">
                 <div className="content">
-                    <div className="delete">&times;</div>
-                    <div className="header">
+                    <div className="delete" title="Delete Task🗑️" onClick={() => deleteTask(taskId)}>&times;</div>
+                    <div className="header" style={{
+                        textDecoration: completed ? "line-through": "none",
+                        color: completed ? "green" : "black"
+                        }}>
                         {title}
                     </div>
-                    <div className="meta">
+                    <div className="meta" style={{color: completed? "black" : "gray"}}>
                         {formattedDateTime}
                     </div>
-                    <div className="description">
+                    <div className="description" style={{
+                        textDecoration: completed ? "line-through": "none",
+                        color: completed ? "green" : "black",
+                        }}>
                         {description}
                     </div>
                     </div>
                     <div className="extra content">
                     <div className="ui two buttons">
-                        <div className="ui basic green button">Edit</div>
-                        <div className="ui basic red button">Complete</div>
+                        <div className="ui basic green button" onClick={() => {completeTask(taskId);}}>
+                            {!completed ? "Complete" : "Revoke"}</div>
+                        <div className="ui basic blue button" >Edit</div>
                     </div>
                 </div>
             </div>
