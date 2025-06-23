@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import {v4 as randomUUID} from 'uuid';
 
 const TaskContext = createContext();
+const TASK_EDITS = ['title', 'description'];
 
 const TaskProvider = ({children}) => {
     const [taskList, setTaskList] = useState([]);
@@ -27,8 +28,18 @@ const TaskProvider = ({children}) => {
         ));
     }
 
+    const editTask = (task) => {
+        let tempTaskList = [...taskList];
+        for(let t of tempTaskList) {
+            if(t.taskId === task.taskId) {
+                TASK_EDITS.forEach((field) => t[field] = task[field]);
+            }
+        }
+        setTaskList(taskList);
+    }
+
     return (
-        <TaskContext.Provider value={{taskList, addNewTask, deleteTask, completeTask}}>
+        <TaskContext.Provider value={{taskList, addNewTask, deleteTask, completeTask, editTask}}>
             {children}
         </TaskContext.Provider>
     );

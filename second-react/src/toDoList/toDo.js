@@ -12,6 +12,7 @@ function ToDo() {
     // const [taskList, setTaskList] = useState([]);
     const {taskList} = useContext(TaskContext);
     const navigate = useNavigate();
+    
 
     // let addNewTask = (task) => {
     //     if(!task) return;
@@ -52,8 +53,8 @@ function ToDo() {
                             justifyContent: 'space-evenly', 
                             boxShadow: '0 0 10px gray'
                         }}>
-                        {taskList.map((task, index) => (
-                            <Task task={task} key={index}/>
+                        {taskList.map((task) => (
+                            <Task task={task} key={task.taskId}/>
                         ))}
                     </div>
                 </div>
