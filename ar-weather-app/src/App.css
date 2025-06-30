@@ -1,0 +1,41 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center {
+  text-align: center;
+}
+
+table {
+  overflow: hidden;
+  transition: all 0.2s ease-in;
+}
+
+.box {
+  padding: 5vh 20px;
+  margin: 20px 10%;
+  background-color: darksalmon;
+  border: 1px dotted black;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+  /* min-height: 80vh; */
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn {
+  position: absolute;
+  top: 24%;
+  right: 1.8%;
+  /* box-shadow: 0 0 10px white; */
+}
+
+.dark {
+  color: white !important;
+  background-color: black;
+}
+
+
+
