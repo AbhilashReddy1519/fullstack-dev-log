@@ -1,0 +1,16 @@
+{
+  "name": "basicmath",
+  "version": "1.0.0",
+  "description": "basic math server by cs",
+  "license": "ISC",
+  "author": "Abhilash Reddy",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
