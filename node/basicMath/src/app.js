@@ -1,3 +1,22 @@
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+    // res.send("This is my first express js server response");
+    res.json({message: "This is my first express js server response"});
+    // res.send(...) for text or res.json(...) for JSON.
+});
+
+app.get("/add", (req, res) => {
+    let {a , b} = req.query;
+    let sum = parseInt(a) + parseInt(b);
+    res.send({ sum });
+})
+
+app.listen(8080, ()=> {
+    console.log("Server is running...");
+});
 
 
 
