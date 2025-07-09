@@ -2,12 +2,12 @@ require("./appMongoose");
 
 const express = require("express");
 const Task = require("./models/Task");
-
+const userRouter = require("./routes/user-routes")
 
 const app = express();
 
 app.use(express.json());
-
+app.use("/user", userRouter);
 
 app.get("/", (req, res) => {
     // res.send("This is my first express js server response");

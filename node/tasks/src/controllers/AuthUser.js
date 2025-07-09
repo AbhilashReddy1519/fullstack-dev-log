@@ -1,5 +1,19 @@
 const User = require("../models/User");
 
+const addNewUser = async (req, res) => {
+    try {
+        const {name, email, age, password } = req.body;
+        const user = new User({name, email, age, password});
+        await user.save();
+
+        return res.send(user);
+
+    } catch(err) {
+        console.error(err);
+        return res.send({message: err.message});
+    }
+}
+
 const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -8,8 +22,8 @@ const loginUser = async (req, res) => {
         return res.send(user);
     } catch(err) {
         console.error(err);
-        res.send({message: `Login Failed`});
+        return res.send({message: `Login Failed`});
     }
 }
 
-module.exports = loginUser;
+module.exports = { loginUser, addNewUser};

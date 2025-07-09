@@ -1,5 +1,8 @@
 const {model , Schema} = require("mongoose");
 const { isEmail } = require("validator");
+const { encrytPassword, checkPassword } = require("../bcrypt");
+
+// SPA: Secure Password Authentication is also done.
 
 const UserSchema = new Schema({
     name: {type: String, trim: true,required: true},
@@ -18,7 +21,7 @@ const UserSchema = new Schema({
     }},
     password: {type: String, required: true, minlength: 8, validate: {
         validator(password) {
-            if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-Z0-9])[^\\\s]{8,}$/.test(password)) 
+            if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9])[^\\\s]{8,}$/.test(password)) 
                 throw new Error("Password must be at least 8 characters, include uppercase, lowercase, digit, special character, and not contain spaces or backslashes."); 
             return true;
         }
@@ -36,7 +39,10 @@ UserSchema.statics.AuthenticateUser = async (email, password) => {
         if(!user) {
             throw new Error("Invalid email, No user Exists");
         }
-        if(password !== user.password) {
+
+        const isMatch = await checkPassword(password, user.password);
+
+        if(!isMatch) {
             throw new Error("Invalid Credentials/Password");
         }
         console.log("Login Successful.")
@@ -47,6 +53,14 @@ UserSchema.statics.AuthenticateUser = async (email, password) => {
     }
 }
 
+UserSchema.pre('save', async function (next) { // here we enter into function before exceuting function.
+    const user = this;
+    if(user.modifiedPaths().includes("password")) {
+        user.password = await encrytPassword(user.password);
+    }
+    next(); // this will return function to save point
+})
+
 const User = model("User", UserSchema);
 
-model.exports = User;
+module.exports = User;
