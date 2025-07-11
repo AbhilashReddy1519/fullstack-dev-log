@@ -14,10 +14,10 @@ const authMiddleware = async (req, res, next) => {
         return res.send({message: "Please Send Valid Token"});
     }
     const token = authorization.substring(7);   
-    const {isValidToken , payload } = verifyToken(token);
+    const { isValidToken , payload } = verifyToken(token);
     if(isValidToken) {
-        console.log("Is a valid token");
-        const user = await User.findOne({_id: payload._id});
+        console.log("Is a valid token", payload);
+        const user = await User.findOne({_id: payload.id});
         if (!user) {
             return res.status(401).send({ message: "Unauthorized: User not found." });
         }
