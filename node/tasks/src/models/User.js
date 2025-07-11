@@ -1,6 +1,7 @@
 const {model , Schema} = require("mongoose");
 const { isEmail } = require("validator");
 const { encrytPassword, checkPassword } = require("../bcrypt");
+const { generateToken } = require("../jwt");
 
 // SPA: Secure Password Authentication is also done.
 
@@ -60,6 +61,13 @@ UserSchema.pre('save', async function (next) { // here we enter into function be
     }
     next(); // this will return function to save point
 })
+
+
+UserSchema.methods.generateUserToken = function() {
+    const user = this;
+    const token = generateToken({id: user._id});
+    return token;
+}
 
 const User = model("User", UserSchema);
 
