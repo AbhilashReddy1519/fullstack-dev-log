@@ -2,7 +2,8 @@ require("./appMongoose");
 
 const express = require("express");
 const Task = require("./models/Task");
-const userRouter = require("./routes/user-routes")
+const userRouter = require("./routes/user-routes");
+const { authMiddleware } = require("./middleware/auth-middleware");
 
 const app = express();
 
@@ -28,7 +29,7 @@ app.post("/add-task",async (req, res) => {
     return res.status(201).send({message: "Task Saved!"});
 })
 
-app.get("/get-tasks", async (req, res) => {
+app.get("/get-tasks", authMiddleware, async (req, res) => {
     const taskList = await Task.find();
 
     return res.status(200).send(taskList);

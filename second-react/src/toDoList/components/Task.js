@@ -27,8 +27,6 @@ function Task({task: incomingTask}) {
         });
         // console.log(task);
     }
-
-
     if(isEditing) {
         return (
             <div className="card">
