@@ -1,12 +1,16 @@
 require("./appMongoose");
 
 const express = require("express");
+const cors = require("cors");
 const Task = require("./models/Task");
 const userRouter = require("./routes/user-routes");
 const { authMiddleware } = require("./middleware/auth-middleware");
 
 const app = express();
 
+app.use(cors({
+    origin: "http://localhost:3000"
+}));
 app.use(express.json());
 app.use("/user", userRouter);
 

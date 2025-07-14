@@ -5,11 +5,16 @@ import {createBrowserRouter, RouterProvider} from 'react-router';
 import './App.css';
 import AddTask from './toDoList/components/addTask';
 import { TaskProvider } from './toDoList/contexts/taskContext';
+import LoginScreen from './toDoList/screens/loginScreen';
 
 let router = createBrowserRouter([
   {
     path: '/',
     element: <ToDo />
+  },
+  {
+    path: '/login',
+    element: <LoginScreen />
   },
   {
     path: '/addTask',
