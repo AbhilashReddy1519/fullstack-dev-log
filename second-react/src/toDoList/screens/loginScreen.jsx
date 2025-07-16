@@ -1,6 +1,8 @@
 import { useState } from "react";
 import {isEmail} from "validator"
 import { loginUserApi } from "../apis/user-api";
+import './screen.css';
+
 
 const LoginScreen = () => {
 
@@ -26,7 +28,8 @@ const LoginScreen = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if(!validateCredentials(credentials)) { return };
-        await loginUserApi({...credentials});
+        const responce = await loginUserApi({...credentials});
+        console.log(responce.data);
     };
 
 
@@ -55,6 +58,8 @@ const LoginScreen = () => {
                     </form>
                 </div>
             </div>
+            <iframe title="carbon" width="710" height="1300" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="https://calculator.carbonfootprint.com/calculator.aspx"></iframe>
+
         </>
     )
 }
